@@ -40,6 +40,8 @@ def _init_conn() -> duckdb.DuckDBPyConnection:
     os.environ["motherduck_token"] = token
 
     conn = duckdb.connect(":memory:")
+    conn.execute("INSTALL motherduck")
+    conn.execute("LOAD motherduck")
     conn.execute("ATTACH 'md:entrusted_dw' AS entrusted_dw (READ_ONLY)")
 
     for alias, fqn in ALLOWED_TABLES.items():

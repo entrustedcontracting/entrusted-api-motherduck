@@ -1,5 +1,6 @@
 fastapi>=0.115,<1
 uvicorn>=0.34,<1
-duckdb==1.4.1
+duckdb==1.5.2
+duckdb-extension-motherduck==1.5.2
 sqlglot>=26.0.0
 pytz>=2024.1
